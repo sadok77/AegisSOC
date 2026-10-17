@@ -1,0 +1,6 @@
+__pycache__/
+.venv/
+.env
+centralsoc.db
+*.py[cod]
+.env

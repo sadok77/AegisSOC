@@ -1,0 +1,15 @@
+services:
+  centralsoc:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      SECRET_KEY: ${SECRET_KEY:?Définissez SECRET_KEY dans le fichier .env}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Définissez ADMIN_PASSWORD dans le fichier .env}
+      COOKIE_SECURE: ${COOKIE_SECURE:-0}
+    volumes:
+      - centralsoc-data:/data
+    restart: unless-stopped
+volumes:
+  centralsoc-data:
+
